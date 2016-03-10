@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+
+.hide {
+    display: none;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.app .app-header {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.app .app-header > section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-search-container .fa,
+.header-notification-msg .fa {
+    color: #A0B6C3;
+}
+
+.header-notification-msg .fa:hover {
+    color: #7F7D97;
+    cursor: pointer;
+}
+
+.app-header .header-search-container {
+    border-left: 1px solid #F1F4F6;
+    border-right: 1px solid #F1F4F6;
+}
+
+.app-header .header-search-container .header-search {
+    height: 25px;
+    background-color: #F1F4F6;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.app-header .header-search-container .header-search .search-text {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-left: 5px;
+    color: #A0B6C3;
+}
+
+.header-notification-msg .notification-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-container .notification-dropdown {
+    position: absolute;
+    width: 247px;
+    background-color: white;
+    top: 70px;
+    left: -115px;
+    border-radius: 5px;
+}
+
+.notification-container .notification-dropdown .notification-dropdown-loading {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-container .notification-dropdown:before {
+    border: solid transparent;
+    content: " ";
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 12px;
+    top: -23px;
+    left: 45%;
+}
+
+.notification-container .notification-dropdown .notification-dropdown-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: #7F7D97;
+    font-weight: 500;
+}
+
+.notification-header-count {
+    background-color: #A0B6C3;
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 500;
+    margin-left: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification-container .notification-dropdown .notification-lists {
+    padding-left: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.notification-container .notification-dropdown .notification-lists li {
+    padding: 15px;
+    display: flex;
+    background-color: #F1F4F6;
+    flex-direction: row;
+    border-top: 1px solid #A0B6C3;
+}
+
+.notification-container .notification-dropdown .notification-lists li.empty-notification p {
+    font-size: 12px;
+    color: #7F7D97;
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+}
+
+.notification-container .notification-dropdown .notification-lists li .notification-msg-content {
+    margin-left: 15px;
+}
+
+.notification-container .notification-dropdown .notification-lists li .notification-msg {
+    font-size: 12px;
+    color: #A0B6C3;
+    font-weight: 500;
+}
+
+.notification-container .notification-dropdown .notification-lists li .user-name {
+    font-size: 13px;
+    color: #7F7D97;
+    font-weight: 500;
+}
+
+.user-img {
+    height: 35px;
+    border-radius: 18px;
+    width: 40px;
+}
+
+.header-notification-msg .notification-container .notification-count {
+    position: absolute;
+    top: -6px;
+    left: 11px;
+    font-size: 11px;
+    background-color: #A0B6C3;
+    width: 15px;
+    height: 15px;
+    color: #fff;
+    border-radius: 7px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-bell-o {
+    margin-right: 15px;
+}
+
+.app .app-header .header-user-action {
+    background-color: #A0B6C3;
+    color: white;
+}
+
+.app .app-header .header-user-action img {
+    height: 30px;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.app .app-header .header-user-action .down-icon-content {
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    height: 26px;
+    width: 26px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.app .app-content {
+    height: 80vh;
+    background-color: #23364B;
+}

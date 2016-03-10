@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Notification TEST</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./bower_components/angular-motion/dist/angular-motion.css">
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body ng-cloak="">
+    <main class="app" ng-controller="appCtrl as app">
+        <header class="app-header">
+            <section class="header-search-container">
+                <div class="header-search">
+                    <i class="fa fa-lg fa-search"></i>
+                    <input type="text" class="search-text" />
+                </div>
+            </section>
+            <section class="header-notification-msg">
+                <div class="notification-container" ng-click="app.toggleNotificationDrop()">
+                    <i class="fa fa-lg fa-bell-o"></i>
+                    <span class="notification-count" ng-if="app.unreadNotificationCount">{{app.unreadNotificationCount}}</span>
+                    <article class="notification-dropdown hide am-fade-and-slide-top" ng-show="app.isNotificationDrop">
+                        <section class="notification-dropdown-header">
+                            <span>Notifications</span>
+                            <span class="notification-header-count" ng-if="app.unreadNotificationCount">{{app.unreadNotificationCount}}</span>
+                        </section>
+                        <section class="notification-dropdown-loading" ng-if="!app.isNotificationLoading">
+                            <i class="fa fa-lg fa-spinner fa-spin"></i>
+                        </section>
+                        <ul class="notification-lists" ng-if="app.isNotificationLoading">
+                            <li ng-repeat="data in app.notifications track by $index">
+                                <img ng-src="{{data.image}}" class="user-img">
+                                <div class="notification-msg-content">
+                                    <span class="user-name">{{data.name}}</span> <span class="notification-msg">{{data.message}}</span>
+                                </div>
+                            </li>
+                            <li ng-if="!app.notifications.length" class="empty-notification">
+                                <p>You don't have any notification.</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+                <i class="fa fa-lg fa-envelope-o"></i>
+            </section>
+            <section class="header-user-action">
+                <img src="./img/satyam.jpg" alt="satyam dev">
+                <div class="down-icon-content">
+                    <i class="fa fa-lg fa-angle-down"></i>
+                </div>
+            </section>
+        </header>
+        <section class="app-content">
+        </section>
+    </main>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
